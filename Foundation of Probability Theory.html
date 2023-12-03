@@ -283,7 +283,7 @@ B \cup \left( \bigcap_{i=1}^{n} A_i \right)= \bigcap_{i=1}^{n} (B \cup A_i)
 <h2 data-number="2.4" class="anchored" data-anchor-id="fundamental-probability-laws"><span class="header-section-number">2.4</span> Fundamental Probability Laws</h2>
 <p>✅ To assign a probability to an event <span class="math inline">\(A \in S\)</span>, we shall introduce a <strong>probability function</strong>, which is a function or a mapping from an event to a real number (0,1).</p>
 <p>✅ To assign probabilities to events, complements of events,unions and intersections of events, we want our collection of events to include all these combinations of events.</p>
-<p>✅Such a collection of events is called an <strong><span class="math inline">\(\sigma\)</span>-field(<span class="math inline">\(\sigma\)</span> algaebra)</strong> of subsets of the sample space S,which constitude the domain of the probability function.</p>
+<p>✅Such a collection of events is called an <span class="math inline">\(\sigma\)</span>-field(<span class="math inline">\(\sigma\)</span> algaebra) of subsets of the sample space S,which constitude the domain of the probability function.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/209581/28/38739/6451/656b139eF3f92090d/e8ba1188e7d747ec.jpg" class="img-fluid figure-img"></p>
@@ -308,7 +308,7 @@ Important
 <div class="callout-body-container callout-body">
 <ul>
 <li><span class="math inline">\(\sigma\)</span>-algebra is a collection of events in <span class="math inline">\(S\)</span>(subset) that satisfies certain properties and constitutes the domain of a probability function.</li>
-<li>A <span class="math inline">\(\sigma\)</span> -field is a collection of subsets in <span class="math inline">\(S\)</span> , but itself is not a subset of <span class="math inline">\(S\)</span> . In contrast, the sample space <span class="math inline">\(S\)</span> is <strong>only an element of a <span class="math inline">\(\sigma\)</span> -field</strong>.</li>
+<li>A <span class="math inline">\(\sigma\)</span> -field is a collection of subsets in <span class="math inline">\(S\)</span> , but itself is not a subset of <span class="math inline">\(S\)</span> . In contrast, the sample space <span class="math inline">\(S\)</span> is <strong>only an element of a</strong> <span class="math inline">\(\sigma\)</span> -field.</li>
 <li>The pair <span class="math inline">\((S,\mathbb{B})\)</span> is called a measurable space.So for a specific sample space <span class="math inline">\(S\)</span>, we can have different <span class="math inline">\(\sigma\)</span>-algebra <span class="math inline">\(\mathbb{B}\)</span>.</li>
 </ul>
 </div>
@@ -367,6 +367,41 @@ Important
 <p>In each quarter, they send surveys to professional forecasters, asking their views on probability distributions of these important macroeconomic indicators.</p>
 <p>Specifically, each forecaster will be asked what is his/her forecast of the probability that the inflation rate lies in various intervals.</p>
 <p>🌰: Risk Neutral Probability</p>
+<p>During the 1997-1998 Asian financial crisis, many investors were very concerned with the collapse of the Hong Kong peg exchange rate system with U.S. dollars and devaluations of Hong Kong dollars.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://img11.360buyimg.com/ddimg/jfs/t1/228856/24/5468/42874/656c39c7Fd1972412/7bdaf3e6562136fd.jpg" class="img-fluid figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+<p>In other words, their subjective probabilities of Hong Kong dollar devaluation were higher than the objective probabilities of the Hong Kong dollar movements. The former are called risk-neutral probability distributions and the latter are called objective or physical probability distributions in finance.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://img14.360buyimg.com/ddimg/jfs/t1/236374/40/5377/11113/656c3a44Fd120b79c/6d287fddf41db3f9.jpg" class="img-fluid figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+<p>The gap between these two distributions reflects the risk attitude of market investors. The risk-neutral probability distribution is a financial instrument in derivative pricing.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/236100/21/5419/27681/656c3ef3Fced1a70c/8ec3cf9e73ffb875.jpg" class="img-fluid figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+<p><strong>[💬 Definition 12. Probability Space]</strong> A probability space is a triple <span class="math inline">\((S,\mathbb{B},P)\)</span>, where <span class="math inline">\(S\)</span> is a sample space, <span class="math inline">\(\mathbb{B}\)</span> is a <span class="math inline">\(\sigma\)</span>-field of subsets of <span class="math inline">\(S\)</span>, and <span class="math inline">\(P:\mathbb{b} \to [0,1]\)</span> is a probability function defined on <span class="math inline">\(\mathbb{B}\)</span>.</p>
+<blockquote class="blockquote">
+<p>Because the probability function <span class="math inline">\(P(\cdot )\)</span> is defined on <span class="math inline">\(\mathbb{B}\)</span>, the collection of sets (i.e., events), it is also called a set function.</p>
+</blockquote>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(\emptyset\)</span> denotes the empty set, then <span class="math inline">\(P(\emptyset) = 0\)</span>.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="methods-of-counting" class="level2" data-number="2.5">
