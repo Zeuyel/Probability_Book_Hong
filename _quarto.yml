@@ -6,6 +6,9 @@ book:
   title: "Probability Theory"
   author: "Wu Yanzu"
   date: "2023/12/2"
+  search: true
+  repo-url: https://github.com/Zeuyel/Probability_Book_Hong
+  repo-actions: [edit]
   chapters:
     - index.qmd
     - intro.qmd
@@ -23,3 +26,6 @@ format:
 
 execute:
   freeze: auto
+
+comments: 
+  hypothesis: true
