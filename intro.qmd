@@ -28,8 +28,8 @@ The last step is to test the model by using the observed data and make inference
 
 ## Applications
 
-After an econometric model passes the empirical
-evaluation, it can then be used to:
+After an econometric model passes the empirical evaluation, it can then be used to:
+
 - Explain important empirical stylized facts
 - Test economic theory and/or hypotheses
 - Forecast future evolution of the economy
@@ -120,14 +120,14 @@ where $Y_t$ is the output,$L_t$ is the labor input,$K_t$ is the capital input,$\
 So we can get the constant return to scale hypothesis:
 
 $$
-\lambda F(L_i,K_i) = F(\lambda L_i,\lambda K_i)\ for\ all \lambda > 0
+\lambda F(L_i,K_i) = F(\lambda L_i,\lambda K_i) \text{ for all } \lambda > 0
 $$
 
 **CRS** is a necessary condition for the existence of a long-run equilibrium in a competitive market.If CRS does not hold, and the technology displays the increasing returns to scale, then the market will lead to natural monopoly.
 
 In practical, a conventional approach to estimate the production function is to use the Cobb-Douglas production function:
 $$
-Y_i = F(L_i,k_i) = A \exp(\epsilon_i) L_i^{\alpha}K_i^{\beta} = 
+Y_i = F(L_i,k_i) = A \exp(\epsilon_i) L_i^{\alpha}K_i^{\beta}
 $$
 
 Then CRS becomes a mathematical restriction on the parameters $\alpha$ and $\beta$:

@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduce",
+    "section": "",
+    "text": "2 General methodology of modern ecnomic research\nModern economy is essentially built by upon the following three fundamental axioms:\nSo we establish the econometrics to infer the probability laws from the observed data that reflect the stochastic economic system, and then use the inferred probability laws for economic application e.g. to make predictions and conduct policy analysis."
+  },
+  {
+    "objectID": "intro.html#data-collection",
+    "href": "intro.html#data-collection",
+    "title": "1  Introduce",
+    "section": "2.1 Data collection",
+    "text": "2.1 Data collection\n\nsurvey\nfield studies\nexperimental economics\nBig data\n\nIn most time,we get so-called stylized facts by summarizing from observed economic data.\n🌰：Engel Curve,Phillips Curve,Okun’s Law,volatility clustering in finance,etc.\nSo the empirical research is the first step of economic research which is so-called economical intuition.But for more further understanding,we need to build a model to explain the stylized facts by using the statistic tools."
+  },
+  {
+    "objectID": "intro.html#development-of-economic-theories-and-models",
+    "href": "intro.html#development-of-economic-theories-and-models",
+    "title": "1  Introduce",
+    "section": "2.2 Development of economic theories and models",
+    "text": "2.2 Development of economic theories and models\nWith the emprical stylized facts,we can build a model to explain the facts and make predictions.This process is called mathematical modeling of economic theroy.\n🌰: An example is the Euler equation for rational expectations in macroeconomics.\nMoreover, the objective of economic modeling is not merely to explain the stylized facts but also to understand the economic mechanism behind the facts."
+  },
+  {
+    "objectID": "intro.html#empriical-validationinference-of-economic-theories-and-models",
+    "href": "intro.html#empriical-validationinference-of-economic-theories-and-models",
+    "title": "1  Introduce",
+    "section": "2.3 Empriical validation/inference of economic theories and models",
+    "text": "2.3 Empriical validation/inference of economic theories and models\nThe last step is to test the model by using the observed data and make inference about the model.The key is to transform the model into a textable empirical econometric model."
+  },
+  {
+    "objectID": "intro.html#applications",
+    "href": "intro.html#applications",
+    "title": "1  Introduce",
+    "section": "2.4 Applications",
+    "text": "2.4 Applications\nAfter an econometric model passes the empirical evaluation, it can then be used to:\n\nExplain important empirical stylized facts\nTest economic theory and/or hypotheses\nForecast future evolution of the economy\nPolicy evaluation and other application"
+  },
+  {
+    "objectID": "intro.html#the-simple-keynesian-consumption-function-modle",
+    "href": "intro.html#the-simple-keynesian-consumption-function-modle",
+    "title": "1  Introduce",
+    "section": "4.1 The simple keynesian consumption function Modle",
+    "text": "4.1 The simple keynesian consumption function Modle\nFor keynesian consumption function, we have the following model:\n\\[\nY_t = C_t + I_t + G_t\\\\\nC_t = \\alpha + \\beta Y_t + \\epsilon_t\n\\]\nWhere \\(Y_t\\) is the aggregate income,\\(C_t\\) is the private consumption,\\(I_t\\) is the private investment,\\(G_t\\) is the government expenditure,\\(\\epsilon_t\\) is the random error term.\nThe parameters \\(\\alpha\\) and \\(\\beta\\) can have appealing economic interpretations:\n\n\\(\\alpha\\) is the survival level consumption even if income is zero.\n\\(\\beta\\) is the marginal propensity to consume (MPC), i.e. the amount of additional consumption for each additional unit of income.\n\nMultiplier of income with respect to govenrnment spending\n\\[\n\\frac{\\partial Y_t}{\\partial G_t} = \\frac{1}{1-\\beta}\n\\]\nwhich depends on the maginal propensity to consume \\(\\beta\\).So when assess the effect of fiscal policy, it is important to know the magnitude of \\(\\beta\\). ## Rational Expectations and Dynamic Asset Pricing Models\nThe rational expectations hypothesis (REH) is a key assumption in modern macroeconomics and finance. It states that agents’ expectations about the future value of an economic variable are not systematically wrong. In other words, agents’ expectations are not biased.\nSuppose a representative agent has a constant relative risk aversion utility function:\n\\[\nU =\\sum_{t=0}^{n} \\beta^{t}\n\\\\ u(C_t) =\\sum_{t=0}^{n} \\beta^t \\frac{C_t^{\\gamma} - 1}{\\gamma}\n\\]\nwhere \\(\\beta \\ge 0\\) is the discount factor and \\(\\gamma \\ge 0\\) is the coefficient of relative risk aversion.\\(\\mu(\\cdot )\\) is the agent’s utility function in each time period.\\(C_t\\) is consumption in period \\(t\\).\nSo, obviously the agent’s optimization problem is: choosing a sequence of consumption \\(\\{C_t\\}_{t=0}^{\\infty}\\) to maximize the expected utility \\[\n\\max_{\\{ C_t \\}} E(u)\n\\] subject to the budget constraint:\n\\[\nC_t + P_t q_t \\le W_t + P_t q_{t-1}\n\\]\nwhere \\(P_t\\) is the price of the consumption good in period \\(t\\), \\(q_t\\) is the quantity of the asset held at the end of period \\(t\\), and \\(W_t\\) is the wage income in period \\(t\\).\nSo we can define this marginal rate of intertemporal substitution (MRIS) as: \\[\nMRS_{t+1}(\\theta) = \\frac { \\frac { \\partial u ( C _ { t + 1 } ) } { \\partial C _ { t + 1 } } } {\\frac { \\partial u ( C _ { t } ) } { \\partial C _ { t } } } = (\\frac{C_{t+1}}{C_t})^{\\gamma-1}\n\\]\nwhere model parameter vector \\(\\theta = (\\beta,\\gamma)^{'}\\).\nSo the First order condition is: \\[\nE[\\beta MRS_{t+1}(\\theta)R_{t+1}|I_t] = 1\n\\]\nwhere \\(R_{t+1}\\) is the gross return on the asset in period \\(t+1\\) and \\(I_t\\) is the information set available at the beginning of period \\(t\\).And the FOC is usually called the Euler equation.And we can estimate this model by using the generalized method of moments (GMM) method.\n\n4.1.1 Production Function and Hypothsis on constant returns to scale\nProduction function： \\[\nY_t = \\exp(\\epsilon_t)F(L_t,K_t)\n\\]\nwhere \\(Y_t\\) is the output,\\(L_t\\) is the labor input,\\(K_t\\) is the capital input,\\(\\epsilon_t\\) is the random error term.\nSo we can get the constant return to scale hypothesis:\n\\[\n\\lambda F(L_i,K_i) = F(\\lambda L_i,\\lambda K_i)\\ for\\ all \\lambda &gt; 0\n\\]\nCRS is a necessary condition for the existence of a long-run equilibrium in a competitive market.If CRS does not hold, and the technology displays the increasing returns to scale, then the market will lead to natural monopoly.\nIn practical, a conventional approach to estimate the production function is to use the Cobb-Douglas production function: \\[\nY_i = F(L_i,k_i) = A \\exp(\\epsilon_i) L_i^{\\alpha}K_i^{\\beta} =\n\\]\nThen CRS becomes a mathematical restriction on the parameters \\(\\alpha\\) and \\(\\beta\\): \\[\\mathbb{H}_0 : \\alpha + \\beta  = 1\\]\nSo if \\(\\alpha + \\beta &gt; 1\\), the production function displays increasing returns to scale; if \\(\\alpha + \\beta &lt; 1\\), the production function displays decreasing returns to scale.\nIn statistics, we can use the F-test to test the null hypothesis \\(\\mathbb{H}_0\\) (one dimensional restriction).\nunfortunately, this test is not suitable for many cross-sectional economic data, which usually display conditional heteroskedasticity.One needs to use a robust, heteroskedasticity-consistent test procedure, such as the White test."
+  }
+]
