@@ -14,20 +14,6 @@
     "text": "2 General methodology of modern ecnomic research\nModern economy is essentially built by upon the following three fundamental axioms:\nSo we establish the econometrics to infer the probability laws from the observed data that reflect the stochastic economic system, and then use the inferred probability laws for economic application e.g. to make predictions and conduct policy analysis."
   },
   {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "2  Summary",
-    "section": "",
-    "text": "In summary, this book has no content whatsoever."
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
-  },
-  {
     "objectID": "intro.html#data-collection",
     "href": "intro.html#data-collection",
     "title": "1  Introduce",
@@ -124,5 +110,12 @@
     "title": "2  Foundation of Probability Theory",
     "section": "2.9 Conclusion",
     "text": "2.9 Conclusion"
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "3  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever."
   }
 ]
