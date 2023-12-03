@@ -144,7 +144,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#random-experiments" id="toc-random-experiments" class="nav-link active" data-scroll-target="#random-experiments"><span class="header-section-number">2.1</span> Random Experiments</a></li>
   <li><a href="#basic-concepts-of-probability" id="toc-basic-concepts-of-probability" class="nav-link" data-scroll-target="#basic-concepts-of-probability"><span class="header-section-number">2.2</span> Basic Concepts of Probability</a></li>
   <li><a href="#review-of-set-theory" id="toc-review-of-set-theory" class="nav-link" data-scroll-target="#review-of-set-theory"><span class="header-section-number">2.3</span> Review of Set Theory</a></li>
-  <li><a href="#fundamental-probability-laws" id="toc-fundamental-probability-laws" class="nav-link" data-scroll-target="#fundamental-probability-laws"><span class="header-section-number">2.4</span> Fundamental Probability Laws</a></li>
+  <li><a href="#fundamental-probability-laws" id="toc-fundamental-probability-laws" class="nav-link" data-scroll-target="#fundamental-probability-laws"><span class="header-section-number">2.4</span> Fundamental Probability Laws</a>
+  <ul class="collapse">
+  <li><a href="#approach-1relative-frequency-interpretation" id="toc-approach-1relative-frequency-interpretation" class="nav-link" data-scroll-target="#approach-1relative-frequency-interpretation"><span class="header-section-number">2.4.1</span> Approach 1:Relative frequency interpretation</a></li>
+  <li><a href="#approach-2subjective-probability-interpretation" id="toc-approach-2subjective-probability-interpretation" class="nav-link" data-scroll-target="#approach-2subjective-probability-interpretation"><span class="header-section-number">2.4.2</span> Approach 2:Subjective Probability interpretation</a></li>
+  </ul></li>
   <li><a href="#methods-of-counting" id="toc-methods-of-counting" class="nav-link" data-scroll-target="#methods-of-counting"><span class="header-section-number">2.5</span> Methods of Counting</a></li>
   <li><a href="#conditional-probability" id="toc-conditional-probability" class="nav-link" data-scroll-target="#conditional-probability"><span class="header-section-number">2.6</span> Conditional Probability</a></li>
   <li><a href="#bayes-theorem" id="toc-bayes-theorem" class="nav-link" data-scroll-target="#bayes-theorem"><span class="header-section-number">2.7</span> Bayes’ Theorem</a></li>
@@ -337,10 +341,33 @@ Important
 </figure>
 </div>
 <ul>
-<li>For a given measurable space (𝑆, 𝔹), many different probability functions can be defined. The goal of econometrics and statistics is to find a probability function that most accurately describes the underlying DGP. This probability function is usually called the true probability function or true probability distribution model.</li>
+<li>For a given measurable space <span class="math inline">\((S,\mathbb{B})\)</span>, many different probability functions can be defined. The goal of econometrics and statistics is to find a probability function that <strong>most accurately describes the underlying DGP</strong>. This probability function is usually called the <strong>true probability function</strong> or true probability distribution model.</li>
 </ul>
 </div>
 </div>
+<p>✅So how to interpret the probability target to an event?</p>
+<section id="approach-1relative-frequency-interpretation" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="approach-1relative-frequency-interpretation"><span class="header-section-number">2.4.1</span> Approach 1:Relative frequency interpretation</h3>
+<p>The probability of an event can be viewed as the limit of the ” relative frequency” of occurrence of the event in a large number of repeated independent experiments under essentially the same conditions.</p>
+<p>The relative frequency interpretation is valid under the assumption of a large number of repeated experiments under the same condition. In statistics, such an assumption is formally termed as <strong>“independence and identical distribution (IID)”</strong>.</p>
+<blockquote class="blockquote">
+<p>⁉️ When the weather forecast bureau predicts that there is a 30% chance for raining, it means that under the same weather conditions it will rain 30% of the times. We cannot guarantee what will happen on any particular occasion, but if we keep records over a long period of time, we should find that the proportion of “raining” is very close to 0.30 for the days with the same weather condition.</p>
+<p>But in practical applications, we cannot repeat the same experiment a large number of times under the same conditions. Therefore, the relative frequency interpretation is not very useful in practice. We introduce the <strong>subjective interpretation</strong> of probability.</p>
+</blockquote>
+</section>
+<section id="approach-2subjective-probability-interpretation" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="approach-2subjective-probability-interpretation"><span class="header-section-number">2.4.2</span> Approach 2:Subjective Probability interpretation</h3>
+<p>The subjective method views probability as a <strong>belief</strong> in the chance of an event occurring.But a personal or subjective assessment is made of theprobability of an event which is difficult or impossible to estimate in any way.So is that means the subjective probability is not useful?</p>
+<p>🌰: Subjective probability is the foundation of Bayesian statistics, which is a rival to classical statistics.</p>
+<p>🌰: Rational Expectations</p>
+<p>Rational expectations (Muth 1961) hypothesizes that the <strong>subjective expectation</strong> of an economic agent (i.e., the expectation under the subjective probability belief of the economic agent) <strong>coincides with the mathematical expectation</strong> (i.e., the expectation under the objective probability distribution).</p>
+<p>For example, we eager to have a wage <span class="math inline">\(S\)</span>, but we don’t know the exact value of <span class="math inline">\(S\)</span>. We can only estimate the probability distribution of <span class="math inline">\(S\)</span> based on our subjective probability belief. The rational expectation hypothesis states that the subjective expectation of <span class="math inline">\(S\)</span> is equal to the mathematical expectation of wage :the <span class="math inline">\(E(S)\)</span>.</p>
+<p>🌰: Professional Forecast</p>
+<p>The U.S. central bank—Fed issues professional forecasts for important macroeconomic indicators such as GDP growth rate, inflation rate and unemployment rate.</p>
+<p>In each quarter, they send surveys to professional forecasters, asking their views on probability distributions of these important macroeconomic indicators.</p>
+<p>Specifically, each forecaster will be asked what is his/her forecast of the probability that the inflation rate lies in various intervals.</p>
+<p>🌰: Risk Neutral Probability</p>
+</section>
 </section>
 <section id="methods-of-counting" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="methods-of-counting"><span class="header-section-number">2.5</span> Methods of Counting</h2>
