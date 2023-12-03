@@ -1,15 +1,16 @@
 project:
   type: book
+  output-dir: docs
 
 book:
   title: "Probability Theory"
   author: "Wu Yanzu"
   date: "2023/12/2"
   chapters:
-    - index.md
-    - intro.md
+    - index.qmd
+    - intro.qmd
     - Foundation of Probability Theory.md
-    - summary.md
+    - summary.qmd
     - references.qmd
 
 bibliography: references.bib
