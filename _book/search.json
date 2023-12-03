@@ -1,0 +1,128 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Probability Theory",
+    "section": "",
+    "text": "Preface\nThis is a book for reviewing the class Probability Theory.\nClass Matetial: the Professor Hong Yongmiao Class\nBook: 《Probability and Statistics for Economists》（ Yongmiao Hong, World Scientific, 2017）\nVideo: Bilibili"
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduce",
+    "section": "",
+    "text": "2 General methodology of modern ecnomic research\nModern economy is essentially built by upon the following three fundamental axioms:\nSo we establish the econometrics to infer the probability laws from the observed data that reflect the stochastic economic system, and then use the inferred probability laws for economic application e.g. to make predictions and conduct policy analysis."
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "2  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever."
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "intro.html#data-collection",
+    "href": "intro.html#data-collection",
+    "title": "1  Introduce",
+    "section": "2.1 Data collection",
+    "text": "2.1 Data collection\n\nsurvey\nfield studies\nexperimental economics\nBig data\n\nIn most time,we get so-called stylized facts by summarizing from observed economic data.\n🌰：Engel Curve,Phillips Curve,Okun’s Law,volatility clustering in finance,etc.\nSo the empirical research is the first step of economic research which is so-called economical intuition.But for more further understanding,we need to build a model to explain the stylized facts by using the statistic tools."
+  },
+  {
+    "objectID": "intro.html#development-of-economic-theories-and-models",
+    "href": "intro.html#development-of-economic-theories-and-models",
+    "title": "1  Introduce",
+    "section": "2.2 Development of economic theories and models",
+    "text": "2.2 Development of economic theories and models\nWith the emprical stylized facts,we can build a model to explain the facts and make predictions.This process is called mathematical modeling of economic theroy.\n🌰: An example is the Euler equation for rational expectations in macroeconomics.\nMoreover, the objective of economic modeling is not merely to explain the stylized facts but also to understand the economic mechanism behind the facts."
+  },
+  {
+    "objectID": "intro.html#empriical-validationinference-of-economic-theories-and-models",
+    "href": "intro.html#empriical-validationinference-of-economic-theories-and-models",
+    "title": "1  Introduce",
+    "section": "2.3 Empriical validation/inference of economic theories and models",
+    "text": "2.3 Empriical validation/inference of economic theories and models\nThe last step is to test the model by using the observed data and make inference about the model.The key is to transform the model into a textable empirical econometric model."
+  },
+  {
+    "objectID": "intro.html#applications",
+    "href": "intro.html#applications",
+    "title": "1  Introduce",
+    "section": "2.4 Applications",
+    "text": "2.4 Applications\nAfter an econometric model passes the empirical evaluation, it can then be used to: - Explain important empirical stylized facts - Test economic theory and/or hypotheses - Forecast future evolution of the economy - Policy evaluation and other application"
+  },
+  {
+    "objectID": "intro.html#the-simple-keynesian-consumption-function-modle",
+    "href": "intro.html#the-simple-keynesian-consumption-function-modle",
+    "title": "1  Introduce",
+    "section": "4.1 The simple keynesian consumption function Modle",
+    "text": "4.1 The simple keynesian consumption function Modle\nFor keynesian consumption function, we have the following model:\n\\[\nY_t = C_t + I_t + G_t\\\\\nC_t = \\alpha + \\beta Y_t + \\epsilon_t\n\\]\nWhere \\(Y_t\\) is the aggregate income,\\(C_t\\) is the private consumption,\\(I_t\\) is the private investment,\\(G_t\\) is the government expenditure,\\(\\epsilon_t\\) is the random error term.\nThe parameters \\(\\alpha\\) and \\(\\beta\\) can have appealing economic interpretations:\n\n\\(\\alpha\\) is the survival level consumption even if income is zero.\n\\(\\beta\\) is the marginal propensity to consume (MPC), i.e. the amount of additional consumption for each additional unit of income.\n\nMultiplier of income with respect to govenrnment spending\n\\[\n\\frac{\\partial Y_t}{\\partial G_t} = \\frac{1}{1-\\beta}\n\\]\nwhich depends on the maginal propensity to consume \\(\\beta\\).So when assess the effect of fiscal policy, it is important to know the magnitude of \\(\\beta\\). ## Rational Expectations and Dynamic Asset Pricing Models\nThe rational expectations hypothesis (REH) is a key assumption in modern macroeconomics and finance. It states that agents’ expectations about the future value of an economic variable are not systematically wrong. In other words, agents’ expectations are not biased.\nSuppose a representative agent has a constant relative risk aversion utility function:\n\\[\nU =\\sum_{t=0}^{n} \\beta^{t}\n\\\\ u(C_t) =\\sum_{t=0}^{n} \\beta^t \\frac{C_t^{\\gamma} - 1}{\\gamma}\n\\]\nwhere \\(\\beta \\ge 0\\) is the discount factor and \\(\\gamma \\ge 0\\) is the coefficient of relative risk aversion.\\(\\mu(\\cdot )\\) is the agent’s utility function in each time period.\\(C_t\\) is consumption in period \\(t\\).\nSo, obviously the agent’s optimization problem is: choosing a sequence of consumption \\(\\{C_t\\}_{t=0}^{\\infty}\\) to maximize the expected utility \\[\n\\max_{\\{ C_t \\}} E(u)\n\\] subject to the budget constraint:\n\\[\nC_t + P_t q_t \\le W_t + P_t q_{t-1}\n\\]\nwhere \\(P_t\\) is the price of the consumption good in period \\(t\\), \\(q_t\\) is the quantity of the asset held at the end of period \\(t\\), and \\(W_t\\) is the wage income in period \\(t\\).\nSo we can define this marginal rate of intertemporal substitution (MRIS) as: \\[\nMRS_{t+1}(\\theta) = \\frac { \\frac { \\partial u ( C _ { t + 1 } ) } { \\partial C _ { t + 1 } } } {\\frac { \\partial u ( C _ { t } ) } { \\partial C _ { t } } } = (\\frac{C_{t+1}}{C_t})^{\\gamma-1}\n\\]\nwhere model parameter vector \\(\\theta = (\\beta,\\gamma)^{'}\\).\nSo the First order condition is: \\[\nE[\\beta MRS_{t+1}(\\theta)R_{t+1}|I_t] = 1\n\\]\nwhere \\(R_{t+1}\\) is the gross return on the asset in period \\(t+1\\) and \\(I_t\\) is the information set available at the beginning of period \\(t\\).And the FOC is usually called the Euler equation.And we can estimate this model by using the generalized method of moments (GMM) method.\n\n4.1.1 Production Function and Hypothsis on constant returns to scale\nProduction function： \\[\nY_t = \\exp(\\epsilon_t)F(L_t,K_t)\n\\]\nwhere \\(Y_t\\) is the output,\\(L_t\\) is the labor input,\\(K_t\\) is the capital input,\\(\\epsilon_t\\) is the random error term.\nSo we can get the constant return to scale hypothesis:\n\\[\n\\lambda F(L_i,K_i) = F(\\lambda L_i,\\lambda K_i)\\ for\\ all \\lambda &gt; 0\n\\]\nCRS is a necessary condition for the existence of a long-run equilibrium in a competitive market.If CRS does not hold, and the technology displays the increasing returns to scale, then the market will lead to natural monopoly.\nIn practical, a conventional approach to estimate the production function is to use the Cobb-Douglas production function: \\[\nY_i = F(L_i,k_i) = A \\exp(\\epsilon_i) L_i^{\\alpha}K_i^{\\beta} =\n\\]\nThen CRS becomes a mathematical restriction on the parameters \\(\\alpha\\) and \\(\\beta\\): \\[\\mathbb{H}_0 : \\alpha + \\beta  = 1\\]\nSo if \\(\\alpha + \\beta &gt; 1\\), the production function displays increasing returns to scale; if \\(\\alpha + \\beta &lt; 1\\), the production function displays decreasing returns to scale.\nIn statistics, we can use the F-test to test the null hypothesis \\(\\mathbb{H}_0\\) (one dimensional restriction).\nunfortunately, this test is not suitable for many cross-sectional economic data, which usually display conditional heteroskedasticity.One needs to use a robust, heteroskedasticity-consistent test procedure, such as the White test."
+  },
+  {
+    "objectID": "Foundation of Probability Theory.html#random-experiments",
+    "href": "Foundation of Probability Theory.html#random-experiments",
+    "title": "2  Foundation of Probability Theory",
+    "section": "2.1 Random Experiments",
+    "text": "2.1 Random Experiments\n[💬 Definition 1. Random Experiment] A random experiment is an experiment whose outcome is not known in advance.\nthere are two essential elements of a random experiment:\n\n\n\n\n\n\nImportant\n\n\n\nthe set of all possible outcomes\nthe likelihood of each outcome\n\n\nwe need to know the sample space and the probability of each outcome in the sample space.\n● The purpose of mathematical statistics is to provide mathematical models for random experiments ofinterest.\n● Once a model for such an experiment is provided and the theory worked out in detail, the statistician may,within this framework, make inference about the probability law of the random experiment."
+  },
+  {
+    "objectID": "Foundation of Probability Theory.html#basic-concepts-of-probability",
+    "href": "Foundation of Probability Theory.html#basic-concepts-of-probability",
+    "title": "2  Foundation of Probability Theory",
+    "section": "2.2 Basic Concepts of Probability",
+    "text": "2.2 Basic Concepts of Probability\n[💬 Definition 2. Sample Space] The possible outconmes of a random experiment are called the sample space and is denoted by \\(S\\).\nWhen an experiment is performed, the realization of the experiment will be one (and only one) outcome in thesample space.(Mutually exclusive)\nIf the experiment is performed a number of times, a different outcome may occur each time or some outcomes may repeat.\na sample space \\(S\\) can be countable or uncountable.\n[💬 Definition 3. Event] An event \\(A\\) is a collection of basic outcomes from the sample space S that share certain common features or equivalently obey certain restrictions.\nThe event is the subset of the sample space.\n\n\n\n\n\n\nImportant\n\n\n\n\n\\(Basic outconme \\subseteq Event \\subseteq Sample\\ space\\)"
+  },
+  {
+    "objectID": "Foundation of Probability Theory.html#review-of-set-theory",
+    "href": "Foundation of Probability Theory.html#review-of-set-theory",
+    "title": "2  Foundation of Probability Theory",
+    "section": "2.3 Review of Set Theory",
+    "text": "2.3 Review of Set Theory\n✅Use Venn Diagram to represent the relationship between sets(or sample point,event, all the related concepts).\n[💬 Definition 4. Intersection] Intersection of \\(A\\) and B, denoted \\(A \\cap B\\)， is the set of basic outcomes in S that belong to both \\(A\\) and B.The intersection of \\(A\\) and B is the event that both \\(A\\) and B occur. is also called the logicall product of \\(A\\) and B.\n[💬 Definition 5. Exclusiveness] If \\(A\\) and B have no common basic outcomes, they are called mutually exclusive and their intersection is empty set \\(\\emptyset\\), i.e., \\(A \\cap B = \\emptyset\\) where \\(\\emptyset\\) denotes an empty set that contains nothing.\n\nmutually exclusive events are also called disjoint events.\n\n[💬 Definition 6. Union] The union of \\(A\\) and B, denoted \\(A \\cup B\\), is the set of basic outcomes in S that belong to either A or B or both. The union of A and B is the event that either A or B or both occur. is also called the logical sum of \\(A\\) and \\(B\\).\n[💬 Definition 7. Collective Exhaustiveness] Suppose that \\(A_1, A_2, A_3, \\cdots\\) are events in S. If \\(A_1 \\cup A_2 \\cup A_3 \\cup \\cdots = S\\), then the events \\(A_1, A_2, A_3, \\cdots\\) are collectively exhaustive.\n[💬 Definition 8. Complement] The complement of A, denoted \\(A^c\\), is the set of basic outcomes in S that do not belong to A. The complement of A is the event that A does not occur.\n\n\\(A \\cap A^{c} = \\emptyset \\ and \\ A \\cup A^{c} = S\\)\n\n[💬 Definition 9. Difference] The difference of A and B, denoted \\(A - B = A \\cap B^{c}\\), is the set of basic outcomes in S that belong to A but not to B. The difference of A and B is the event that A occurs but B does not occur.\n🧮Distributivity Laws :\n\\[\nA \\cap (B \\cup C) = (A \\cap B) \\cup (A \\cap C)\\\\\nA \\cup (B \\cap C) = (A \\cup B) \\cap (A \\cup C)\n\\]\nIn more general, we have \\[\nB \\cap \\left( \\bigcup_{i=1}^{n} A_i \\right)= \\bigcup_{i=1}^{n} (B \\cap A_i) \\\\\nB \\cup \\left( \\bigcap_{i=1}^{n} A_i \\right)= \\bigcap_{i=1}^{n} (B \\cup A_i)\n\\]\n🧮 De Morgan’s Laws\n\\[\n\\left( A \\cup  B \\right)^{c} =A^{c} \\cap B^{c}\n\\left( A \\cap  B  \\right)^{c} = A^{c} \\cup B^{c}\n\\]\nIn more general, we have \\[\n\\left( \\bigcup_{i=1}^{n} A_i \\right)^{c} = \\bigcap_{i=1}^{n} A_i^{c} \\\\\n\\left( \\bigcap_{i=1}^{n} A_i \\right)^{c} = \\bigcup_{i=1}^{n} A_i^{c}\n\\]\n\n🌰: Suppose the events A and B are disjoint.Under what condition are \\(A^{c}\\) and \\(B^{c}\\) also disjoint?\n👉: \\(A^{c}\\) and \\(B^{c}\\) are disjoint if and only if \\(A \\cup B = S\\).That is say \\(A\\) and \\(B\\) is exhaustive.\n🌰: • Are \\(A \\cap B\\) and \\(A^{c} \\cap B\\) mutually exclusive?\n• Is \\(\\left( A \\cap B \\right) \\cup \\left( A^{c} \\cap B \\right) = B\\)?\n• Are \\(A\\) and \\(A^{c} \\cap B\\) mutually exclusive?\n• Is \\(A \\cup \\left( A^{c} \\cap B \\right) = A \\cap B\\)?\n👉：Yes, Yes, Yes, No\n🌰: Let the set of events \\(\\{ A_i = 1 , \\ldots ,n \\}\\) be mutually exclusive and collectively exhaustive, and let A be an event in S - Are \\(A_1 \\cap A, \\ldots ,A_n \\cap A\\) mutually exclusive? - Is the union of \\(A_i \\cap A, i = 1, \\ldots ,n\\), equal to A? That is, do we have: \\[\n\\bigcup_{i=1}^{n} \\left( A_i \\cap A \\right) = A\n\\]\n👉: Yes, Yes\n\nIn the linear algebra, we can use the projection matrix to understand this.The \\(\\{ A_1,A_2, \\ldots ,A_n \\}\\) is the orthogonal bases of the specific space, and the \\(A\\) is the vector in this space. The \\(A_i \\cap A\\) is the projection of \\(A\\) on the \\(A_i\\) direction.\n\nA sequence of collective and mutually exclusive events forms a partition of sample space S.\nA set of collectively exhaustive and mutually exclusive events can be viewed as a complete set of orthogonal bases.\nThe projection of a vector on a subspace is the sum of the projections of the vector on the orthogonal bases of the subspace.\nA complete set of orthogonal bases can represent any event A in the sample space S, and 𝐴𝑖 ∩ 𝐴 could be viewed as the projection of event A on the base \\(A_i\\)."
+  },
+  {
+    "objectID": "Foundation of Probability Theory.html#fundamental-probability-laws",
+    "href": "Foundation of Probability Theory.html#fundamental-probability-laws",
+    "title": "2  Foundation of Probability Theory",
+    "section": "2.4 Fundamental Probability Laws",
+    "text": "2.4 Fundamental Probability Laws\n✅ To assign a probability to an event \\(A \\in S\\), we shall introduce a probability function, which is a function or a mapping from an event to a real number (0,1).\n✅ To assign probabilities to events, complements of events,unions and intersections of events, we want our collection of events to include all these combinations of events.\n✅Such a collection of events is called an \\(\\sigma\\)-field(\\(\\sigma\\) algaebra) of subsets of the sample space S,which constitude the domain of the probability function.\n\n\n\nimage.png\n\n\n[💬 Definition 10. Sigma Algebra] A \\(sigma(\\sigma) algebra\\),denoted by \\(\\mathbb{B}\\) , is a collection of subsets(events) of S that satisfies the following three conditions:\n\n\\(\\emptyset \\in \\mathbb{B}\\)i.e., the empty set is in \\(\\mathbb{B}\\).\nIf \\(A \\in \\mathbb{B}\\), then \\(A^{c} \\in \\mathbb{B}\\).(i.e., \\(\\mathbb{B}\\) is closed under complements)\nIf \\(A_1,A_2, \\ldots \\in \\mathbb{B}\\), then \\(\\bigcup_{i=1}^{\\infty} A_i \\in \\mathbb{B}\\).(i.e., \\(\\mathbb{B}\\) is closed under countable unions)\n\n\n\n\n\n\n\nImportant\n\n\n\n\n\\(\\sigma\\)-algebra is a collection of events in \\(S\\)(subset) that satisfies certain properties and constitutes the domain of a probability function.\nA \\(\\sigma\\) -field is a collection of subsets in \\(S\\) , but itself is not a subset of \\(S\\) . In contrast, the sample space \\(S\\) is only an element of a \\(\\sigma\\) -field.\nThe pair \\((S,\\mathbb{B})\\) is called a measurable space.So for a specific sample space \\(S\\), we can have different \\(\\sigma\\)-algebra \\(\\mathbb{B}\\).\n\n\n\n[💬 Definition 11. Probability Function] Suppose a random experiment has a sample space \\(S\\) and an associated \\(\\sigma\\) -field \\(\\mathbb{B}\\) . A probability function \\[\nP:\\mathbb{B} \\to [0,1]\n\\]\nis defined as a mapping that satisfies the following three conditions:\n\n\\(0 \\le P(A) \\le 1 for all A \\in \\mathbb{B}\\) .\n\\(P(S) = 1\\).\nIf \\(A_1,A_2, \\ldots \\in \\mathbb{B}\\) are mutually exclusive, then \\(P\\left( \\bigcup_{i=1}^{\\infty} A_i \\right) = \\sum_{i=1}^{\\infty} P(A_i)\\).🚩The probability of the union of mutually exclusive events is the sum of the probabilities of the individual events.\n\n\n\n\n\n\n\nImportant\n\n\n\nA probability function tell how the probability of occurrence is distributed over the set of events \\(\\mathbb{B}\\).In this sense we speak of a distribution of probability."
+  },
+  {
+    "objectID": "Foundation of Probability Theory.html#methods-of-counting",
+    "href": "Foundation of Probability Theory.html#methods-of-counting",
+    "title": "2  Foundation of Probability Theory",
+    "section": "2.5 Methods of Counting",
+    "text": "2.5 Methods of Counting"
+  },
+  {
+    "objectID": "Foundation of Probability Theory.html#conditional-probability",
+    "href": "Foundation of Probability Theory.html#conditional-probability",
+    "title": "2  Foundation of Probability Theory",
+    "section": "2.6 Conditional Probability",
+    "text": "2.6 Conditional Probability"
+  },
+  {
+    "objectID": "Foundation of Probability Theory.html#bayes-theorem",
+    "href": "Foundation of Probability Theory.html#bayes-theorem",
+    "title": "2  Foundation of Probability Theory",
+    "section": "2.7 Bayes’ Theorem",
+    "text": "2.7 Bayes’ Theorem"
+  },
+  {
+    "objectID": "Foundation of Probability Theory.html#independence",
+    "href": "Foundation of Probability Theory.html#independence",
+    "title": "2  Foundation of Probability Theory",
+    "section": "2.8 Independence",
+    "text": "2.8 Independence"
+  },
+  {
+    "objectID": "Foundation of Probability Theory.html#conclusion",
+    "href": "Foundation of Probability Theory.html#conclusion",
+    "title": "2  Foundation of Probability Theory",
+    "section": "2.9 Conclusion",
+    "text": "2.9 Conclusion"
+  }
+]

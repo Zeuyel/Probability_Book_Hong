@@ -1,0 +1,24 @@
+project:
+  type: book
+
+book:
+  title: "Probability Theory"
+  author: "Wu Yanzu"
+  date: "2023/12/2"
+  chapters:
+    - index.md
+    - intro.md
+    - Foundation of Probability Theory.md
+    - summary.md
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+
