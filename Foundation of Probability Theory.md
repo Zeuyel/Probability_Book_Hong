@@ -163,9 +163,14 @@ is defined as a mapping that satisfies the following three conditions:
 
 ::: {.callout-important}
 
-A probability function tell how the probability of occurrence is distributed over the set of events $\mathbb{B}$.In this sense we speak of a distribution of probability.
+- A probability function tell how the probability of occurrence is distributed over the set of events $\mathbb{B}$.In this sense we speak of a distribution of probability.
+
+![](https://img12.360buyimg.com/ddimg/jfs/t1/232346/23/5558/25512/656c2680F5d41484e/4bbc3248c4c4ad99.jpg){width=50% fig-align="center"}
+
+- For a given measurable space (𝑆, 𝔹), many different probability functions can be defined. The goal of econometrics and statistics is to find a probability function that most accurately describes the underlying DGP. This probability function is usually called the true probability function or true probability distribution model.
 
 :::
+
 
 
 
