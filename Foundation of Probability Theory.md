@@ -289,7 +289,121 @@ If in addition $S$ consists of $n$ equally likely basic outcomes $\{ A_1, \ldots
 ## Conditional Probability
 
 ## Bayes' Theorem
+✅ The knowledge that an event B has occurred can be used to revise or update the prior probability that an event A will occur.
+
+✅ Bayes' theorem describes the mechanism of revising or updating the prior probability **learning**.
+
+✅ This theorem leads to the Bayesian school of statistics, a rival to the school of classical statistics.
+
+**⚖️ Theorem 11 [Baye's Theorem]** Suppose A and B are two events with $P(A) > 0$ and $P(B) > 0$. Then
+$$
+P(A|B) = \frac{P(B|A)P(A)}{P(B)} = \frac{P(B|A)P(A)}{P(B|A)P(A) + P(B|A^{c})P(A^{c}) }
+$$
+
+::: {.callout-important}
+
+$P(A)$ is called a " prior" probability (i.e., before the fact or evidence) about event A since it is the probability of A before new information B arrives.
+
+The conditional probability $P(A|B)$ is called a "posterior" probability (i.e., after the fact or evidence) since it represents the revised assignment of probability of A after the new information that B has occurred is obtained.
+
+:::
+
+**⚖️ Theorem 12 [Alternative Statement of Bayes' Theorem] ** Suppose $A_1, \ldots ,A_n$ are $n$ mutually exclusive and collectively exhaustive events in the sample space $S$, and $A$ is an event with $P(A) > 0$. Then the conditional probability of $A_i$ given $A$ is
+$$
+P(A_i|A) = \frac{P(A|A_i)P(A_i)}{\sum_{j=1}^{n}P(A|A_i)P(A_i) }, \quad i = 1,2, \ldots ,n
+$$
+
+🌰: How to Determine Auto-insurance Premium?
+
+Suppose an insurance company has three types of customers—high risk, medium risk and low risk. From the company's historical consumer database, it is known that 25\% of its customers are high risk, 25\% are medium risk, and 50\% are low risk. Also, the database shows that the probability that a customer has at least one speeding ticket in one year is 0.25 for high risk, 0.16 for medium risk, and 0.10 for low risk.
+
+Now suppose a new customer wants to be insured and reports that he has had one speeding ticket this year. What is the probability that he is a high risk customer, given that he has had one speeding ticket this year?
 
 ## Independence
+**\[💬 Definition 13. Independence\]** Two events $A$ and $B$ are independent if and only if $P(A \cap B) = P(A)P(B)$
+
+::: {.callout-tip}
+# difference between mutally exclusive and independence
+
+mutually exclusive means the $P(A\cap  b) \equiv 0$ , the occrance of event $A$ means the disappear of event $B$ , but the independence means $P(A\cap  b) \equiv P(A)P(B)$.Independence is a probability notion to describe **nonexistence** of any kind of relationship between two events. It plays a fundamental role in probability theory and statistics. **But two independent event may occur at the same time.**
+
+![](https://img11.360buyimg.com/ddimg/jfs/t1/228525/18/6306/11364/656f1774Ff105e0d3/476461da30ba5609.jpg)
+
+:::
+
+
+Suppose $P(B)>0$.They by definition of independence:      
+$$
+P(A|B) = P(A \cap B)
+= \frac{P(A)P(B)}{P(B) }
+= P(A)
+$$ 
+
+this formula shows that the conditional probability of $A$ given $B$ equal to the unconditional probability of $A$.**The knowledge of $B$ does not help in predicting $A$**.Similarly, we have $P(B|A) = P(B)$, i.e. the occurrence of $A$ has no effect on the occurrence or probability of $B$.Intuitively, independence implies that $A$ and $B$ are **"irrelevant"**, or there exists no relationship between them.
+
+🌰:Random Walk hypothesis(Fama 1970)
+A stock Price $P_t$ will follow a random walk if 
+$$
+P_t = P_{t-1} + X_t
+$$
+
+where the $\{ X_t  \}$ is the independent across different time period.
+
+> Note that here the $X_t = P_t - P_{t-1}$ is the stock price change from the $t-1$ to time $t$
+
+Now we have a closely related concept : the geometric random walk.The stock price $\{ P_t \}$ is called a geoemtric random walk if 
+$$
+\ln P_t = \ln P_{t-1} + X_t
+$$
+
+$\{ X_t \}$ is independent across different time period.
+
+The increment of the geometric random walk is
+$$
+X_t = \ln (\frac{P_t}{P_{t-1} })
+= \ln (1 + \frac{P_t - P_{t-1} }{P_{t-1} })
+\simeq \frac{P_t - P_{t-1}}{P_{t-1}}
+$$
+
+can be interpreted as the **relative stock price change**.In long term time series analysis, the geometric random walk is more popular than the random walk because the relative stock price change is more stable than the absolute stock price change.
+
+**⚖️ Theorem 13 ** Let $A$ and $B$ are two independent events. Then
+
+- $A$ and Bc are independent
+- $A^{c}$ and $B$ are independent
+- $A^{c}$ and $B^{c}$ are independent
+
+**[💬 Definition 15 Independence Among Several Events]** $k$ events $A_1,A_2, \ldots ,A_n$ are mutually independent if, for every possible subset $A_{i_1}, \ldots ,A_{i_j}$ of $j$ of those events $(j =2,3, \ldots ,k)$,
+$$
+P(A_{i_1} \cap \cdots \cap A_{i_j}) = P(A_{i_1}) \times \cdots \times P(A_{i_j})
+$$
+
+> For three or more events, independence is called mutual independence or joint independence. If there is no possibility of misunderstanding, independence is often used without the modifier "mutual" or "joint" when considering several events.
+> ![](https://img14.360buyimg.com/ddimg/jfs/t1/228636/1/6015/17059/656f2a9fF57f59405/e60c06da9f8c160d.jpg)
+
+🌰: Three events $A,B$and $C$ are independent, if the following $2^{3} - (1+3) = 4$ conditions are satisfied ($1 \text{means the } \emptyset \text{ and the} 3 \text{means the single element set}$):
+
+- $P(A \cap B) = P(A)P(B)$
+- $P(A \cap B) = P(A)P(C)$
+- $P(B \cap C) = P(B)P(C)$
+- $P(A \cap B \cap C ) = P(A)P(B)P(C)$
+
+🌰: Complementarity Between Economic Reforms 
+
+In the fields of economic growth and development, many studies find that one economic policy usually necessities another policy to stimulate the economic growth, which is called policy complementarities. In traditional economics, individual reforms or sequential reforms may not be effective or fully effective, or even back-ring. Reforms must be packed together in order to be effective. Foundation of Probability Theory Independence
+
+For example, in order to improve firm productivity ($A_1$), changing a manager ($A_2$) should be together with granting autonomy to the firm ($A_3$).
+
+> There are many other examples of economic complementarities. Harrison (1996), Ro-driguez and Rodrik (2000), Loayza et al. (2005), Chang et al. (2005) document that international trade openness, only when combined with other policies that improve a country's educational investment, financial depth, inflation stabilization, public infrastructure, governance, labor market flexibility, and ease of firm entry and exit, can promote economic growth.
 
 ## Conclusion
+
+✅ This chapter is a foundation of probability theory.
+
+✅ We first characterize a random experiment by a probability space $(S, \mathbb{B}, P)$. Interpretations for probabilities are provided.To the probability function, we need to estimate it from data to get a **true probability function**
+
+✅ Given a measurable space $(𝑆, 𝔹)$, one can dene many probability functions. The main objective of econometrics is to use the observed economic data to infer a suitable probability function which truly represents the true probability distribution for the data generating process.
+
+✅ For random experiments with equally likely outcomes, methods of counting are very useful in calculating probabilities of interested events.
+
+✅ The conditional probability function characterizes predictive relationships between or among economic events. An application is Bayes' theorem.
