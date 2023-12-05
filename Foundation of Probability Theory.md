@@ -407,3 +407,5 @@ For example, in order to improve firm productivity ($A_1$), changing a manager (
 ✅ For random experiments with equally likely outcomes, methods of counting are very useful in calculating probabilities of interested events.
 
 ✅ The conditional probability function characterizes predictive relationships between or among economic events. An application is Bayes' theorem.
+
+✅ Finally, we introduce the concept of independence and its implications in economics and finance.
