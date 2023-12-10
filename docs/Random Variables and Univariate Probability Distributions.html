@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Probability Theory - 3&nbsp; Random Variables and Univariate Probability Distributions</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./summary.html" rel="next">
+<link href="./Foundation of Probability Theory.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Random Variables and Univariate Probability Distributions.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Random Variables and Univariate Probability Distributions</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Probability Theory</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/Zeuyel/Probability_Book_Hong" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduce</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Foundation of Probability Theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Foundation of Probability Theory</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Random Variables and Univariate Probability Distributions.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Random Variables and Univariate Probability Distributions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#random-variables" id="toc-random-variables" class="nav-link active" data-scroll-target="#random-variables"><span class="header-section-number">3.1</span> Random Variables</a>
+  <ul class="collapse">
+  <li><a href="#defination-of-random-variable" id="toc-defination-of-random-variable" class="nav-link" data-scroll-target="#defination-of-random-variable"><span class="header-section-number">3.1.1</span> Defination of Random Variable</a></li>
+  <li><a href="#probability-function-of-the-new-sample-space-omega" id="toc-probability-function-of-the-new-sample-space-omega" class="nav-link" data-scroll-target="#probability-function-of-the-new-sample-space-omega"><span class="header-section-number">3.1.2</span> Probability Function of the new sample space <span class="math inline">\(\Omega\)</span></a></li>
+  </ul></li>
+  <li><a href="#cumulative-distribution-function" id="toc-cumulative-distribution-function" class="nav-link" data-scroll-target="#cumulative-distribution-function"><span class="header-section-number">3.2</span> Cumulative Distribution Function</a></li>
+  <li><a href="#discrete-random-variablesdrv" id="toc-discrete-random-variablesdrv" class="nav-link" data-scroll-target="#discrete-random-variablesdrv"><span class="header-section-number">3.3</span> Discrete Random Variables(DRV)</a></li>
+  <li><a href="#continuous-random-variables" id="toc-continuous-random-variables" class="nav-link" data-scroll-target="#continuous-random-variables"><span class="header-section-number">3.4</span> Continuous Random Variables</a></li>
+  <li><a href="#functions-of-a-random-variable" id="toc-functions-of-a-random-variable" class="nav-link" data-scroll-target="#functions-of-a-random-variable"><span class="header-section-number">3.5</span> Functions of a Random Variable</a></li>
+  <li><a href="#mathematical-expectation" id="toc-mathematical-expectation" class="nav-link" data-scroll-target="#mathematical-expectation"><span class="header-section-number">3.6</span> Mathematical Expectation</a></li>
+  <li><a href="#moments" id="toc-moments" class="nav-link" data-scroll-target="#moments"><span class="header-section-number">3.7</span> Moments</a></li>
+  <li><a href="#quantiles" id="toc-quantiles" class="nav-link" data-scroll-target="#quantiles"><span class="header-section-number">3.8</span> Quantiles</a></li>
+  <li><a href="#moment-generating-function-mgf" id="toc-moment-generating-function-mgf" class="nav-link" data-scroll-target="#moment-generating-function-mgf"><span class="header-section-number">3.9</span> Moment Generating Function (MGF)</a></li>
+  <li><a href="#characteristic-function" id="toc-characteristic-function" class="nav-link" data-scroll-target="#characteristic-function"><span class="header-section-number">3.10</span> Characteristic Function</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">3.11</span> Conclusion</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Zeuyel/Probability_Book_Hong/edit/main/Random Variables and Univariate Probability Distributions.md" class="toc-action">Edit this page</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Random Variables and Univariate Probability Distributions</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="random-variables" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="random-variables"><span class="header-section-number">3.1</span> Random Variables</h2>
+<p>✅ It is inconvenient to work with different sample spaces. To develop a <strong>unified</strong> probability theory, we consider a <strong>mapping</strong> <span class="math inline">\(X\)</span> from the original sample space <span class="math inline">\(S\)</span> to a new sample space <span class="math inline">\(\Omega\)</span> which consists of <strong>a set of real numbers</strong>.This transformation <span class="math inline">\(X:S \to \Omega\)</span> is called a random variable. &gt; The nature of random variable is a function or a map</p>
+<p>✅ In many applications, we may be interested only in some particular aspect of the outcomes of an experiment, rather than the outcomes themselves. <span class="math inline">\(A\)</span> suitably defined random variable <span class="math inline">\(X\)</span> will better serve for our purpose.</p>
+<section id="defination-of-random-variable" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="defination-of-random-variable"><span class="header-section-number">3.1.1</span> Defination of Random Variable</h3>
+<p><strong>[💬 Definition 1. Random Varible]</strong> A random variable,<span class="math inline">\(X(\cdot )\)</span>, is a <span class="math inline">\(\mathbb{B}\)</span>-measurable mapping (or point function) from the sample space <span class="math inline">\(S\)</span> to the real line <span class="math inline">\(\mathbb{R}\)</span> such that for each outcome <span class="math inline">\(s \in S\)</span>, there exists a corresponding unique real number, <span class="math inline">\(X(s)\)</span>. The collection of all possible values that the random variable <span class="math inline">\(X\)</span> can take, also called the range of <span class="math inline">\(X(\cdot )\)</span>,constitutes a new sample space, denoted as <span class="math inline">\(\Omega\)</span>.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+X:S \to \Omega \text{ need not be 1-1 mapping. \\
+It is possible that }X(s_1) = X(s_2)
+\]</span></p>
+<p>Convention:A capital letter <span class="math inline">\(x\)</span> denotes a random variable,and a lowercase letter <span class="math inline">\(x\)</span> denotes its realization,i.e., a possible value that random variable <span class="math inline">\(X\)</span> can take (i.e., <span class="math inline">\(x =X(s)\)</span>for <span class="math inline">\(a\)</span> given <span class="math inline">\(s \in S\)</span>).</p>
+</div>
+</div>
+<p>🌰:When we throw a coin, the sample space <span class="math inline">\(S = \{ H,T \}\)</span>. Define a random variable <span class="math inline">\(X(\cdot )\)</span> by $X(H) =1 $ and <span class="math inline">\(X(T) = 0\)</span>. Then we obtain a new sample space <span class="math inline">\(\Omega = \{ 1,0 \}\)</span></p>
+<p>For the election of a candidate, the sample sapces <span class="math inline">\(S = \{ Win,Fail \}\)</span>. Define a random variable <span class="math inline">\(X(\cdot )\)</span> by $X(Win) =1 $ and <span class="math inline">\(X(Fail) = 0\)</span>. Then we obtain a new sample space <span class="math inline">\(\Omega = \{ 1,0 \}\)</span></p>
+<p>So it is not necessary to have the same number of basic outcomes for both <span class="math inline">\(S\text{ and } \Omega\)</span></p>
+<p>Suppose we throw three fair coins.Then the space sample <span class="math inline">\(S=\{TTT,TTH,THT,HTT,HHT,HTH,THH,HHH\}\)</span> Let <span class="math inline">\(X(\cdot)\)</span> be the number of heads shown up.Then <span class="math inline">\(X(TTT)= 0,\)</span><span class="math inline">\(X(TTH)=1,\)</span><span class="math inline">\(X(THT)=1,\)</span><span class="math inline">\(X(HTT)=1,\)</span><span class="math inline">\(X(HHT)= 2,\)</span><span class="math inline">\(X(HTH)=2,\)</span><span class="math inline">\(X(THH)2,\)</span><span class="math inline">\(X(HHH)=3\)</span>.We have <span class="math inline">\(\Omega = \{ 0,1,2,3 \}\)</span>.</p>
+<p>Suppose <span class="math inline">\(S = \{ s:-\infty &lt; s &lt; +\infty \}\)</span>. Define <span class="math inline">\(X(s) = 1\)</span> if <span class="math inline">\(s &gt; 0\)</span> and <span class="math inline">\(X(s) = 0\)</span> if <span class="math inline">\(s \le 0\)</span></p>
+<blockquote class="blockquote">
+<p>Here <span class="math inline">\(X\)</span> is called binary random variable because there are only two possible values <span class="math inline">\(X\)</span> can take.The binary variable has wide applications in economics.</p>
+</blockquote>
+<p>There are many other examples of random variables, including - subjective well-being - sentiment index of investoers - economic policy uncertainty(EPU) index</p>
+<p>These indices are usually constructed based on <em>text data</em> from social media platforms (e.g.,WeChat,Facebook)and news media.Text data are an unstructured form of <em>Big data</em>.</p>
+<hr>
+</section>
+<section id="probability-function-of-the-new-sample-space-omega" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="probability-function-of-the-new-sample-space-omega"><span class="header-section-number">3.1.2</span> Probability Function of the new sample space <span class="math inline">\(\Omega\)</span></h3>
+<p>The probability function defined on the original sanple space <span class="math inline">\(S\)</span> can be uesd to obtain the probability function of the new sample space <span class="math inline">\(\Omega\)</span>.</p>
+<p>First suppose space <span class="math inline">\(S\)</span> has a finite number of basic outcomes</p>
+<p><span class="math display">\[
+S = \{ s_1,s_2, \ldots ,s_n \}
+\]</span></p>
+<p>with a probability function <span class="math inline">\(P:\mathbb{B} \to [0,1]\)</span>, where <span class="math inline">\(\mathbb{B}\)</span> is a <span class="math inline">\(\sigma\)</span>-field associated with <span class="math inline">\(S\)</span>. Define a random variable <span class="math inline">\(X(\cdot ) : S \to \mathbb{R}\)</span> by <span class="math inline">\(X(s_i) = x_i\)</span> for <span class="math inline">\(i = 1,2,\ldots ,n\)</span> Then the new sample space <span class="math inline">\(\Omega\)</span> is given by</p>
+<p><span class="math display">\[
+\Omega \{ x_1, \ldots ,x_m \}
+\]</span></p>
+<p>where <span class="math inline">\(m\)</span> may not be the same as <span class="math inline">\(n\)</span>.</p>
+<p>Then the probability function <span class="math inline">\(P_{X}:\Omega \to \mathbb{R}\)</span> for <span class="math inline">\(X\)</span> can be obtained as</p>
+<p><span class="math display">\[
+P_{X}(x_i) \equiv P(X = x_i) = P(C_i)
+\]</span></p>
+<p>where <span class="math inline">\(C_i\)</span> is an event in <span class="math inline">\(S\)</span> such that:</p>
+<p><span class="math display">\[
+C_i = \{ s \in S : X(s) = x_i \}
+\]</span></p>
+<p><span class="math inline">\(P_{X}(\cdot )\)</span> is <strong>induced</strong> probability function on the new sample space <span class="math inline">\(\Omega\)</span>, obtained from the original probability function <span class="math inline">\(P(\cdot )\)</span></p>
+<p>More formally, for any set <span class="math inline">\(A \in \mathbb{B}_{\Omega}\)</span>,where <span class="math inline">\(\mathbb{B}_{\Omega}\)</span> is a <span class="math inline">\(\sigma\)</span>-field generated from <span class="math inline">\(\Omega\)</span>, we can define a probability function <span class="math inline">\(P_{X}(\cdot ): \mathbb{B}_{\Omega} \to \mathbb{R}\)</span> on <span class="math inline">\(\Omega\)</span> as follows: <span class="math display">\[
+P_{X}(A) = P(C_{A}) = P[s \in S : X(s) \in A]
+\]</span></p>
+<p>where <span class="math inline">\(C_{A} = \{ s \in S:X(s) \in A \}\)</span>, which is an equivalent event in <span class="math inline">\(S\)</span>.</p>
+<p>Now we complete the transformation from the original measurable space <span class="math inline">\((S,\mathbb{B},P)\)</span> to the new space <span class="math inline">\((\Omega,\mathbb{B}_{\Omega},P_X)\)</span>.</p>
+<p><strong>💬 Definition 3.2 Measurable Function</strong> A function <span class="math inline">\(X:S \to \mathbb{R}\)</span> is <span class="math inline">\(\mathbb{B}\)</span>-measurable(or measurable with respect to the <span class="math inline">\(\sigma\)</span>-field $ $ generated from <span class="math inline">\(S\)</span>) if for every real number <span class="math inline">\(a\)</span>, the set <span class="math inline">\(\{ s \in S : X(s) \ge a \} \in B\)</span></p>
+<ul>
+<li>A <span class="math inline">\(\mathbb{B}\)</span>-measurable function is simply called a measurable function.(if it dose not cause any confusion)</li>
+<li>A measurable function ensures that <span class="math inline">\(P(X \in A)\)</span> is always well-defined for all subsets <span class="math inline">\(A\)</span> in <span class="math inline">\(\mathbb{B}_{\Omega}\)</span></li>
+<li>If <span class="math inline">\(X(\cdot )\)</span> is not measurable, then there exist subsets in the <span class="math inline">\(\sigma\)</span>-field in <span class="math inline">\(\mathbb{R}\)</span> for which probability are not defined .</li>
+<li>In this doc, the term “random variable” is restricted to being a <span class="math inline">\(\mathbb{B}\)</span>-measurable function from <span class="math inline">\(S\)</span> to <span class="math inline">\(\mathbb{R}\)</span></li>
+</ul>
+<p><strong>⚖️Theorem 3.1</strong> Let <span class="math inline">\(\mathbb{B}\)</span> be a <span class="math inline">\(\sigma\)</span>-algebra associated with sample spaces <span class="math inline">\(S\)</span>.Let <span class="math inline">\(f(\cdot )\)</span> and <span class="math inline">\(g(\cdot )\)</span> be <span class="math inline">\(\mathbb{B}\)</span>-measurable real valued functions, and <span class="math inline">\(c\)</span> be a real number.Then the function <span class="math inline">\(f(\cdot ) + g(\cdot )\)</span>,<span class="math inline">\(cf(\cdot )\)</span>,<span class="math inline">\(f( \cdot )\cdot g( \cdot )\)</span>,<span class="math inline">\(\left\vert f( \cdot ) \right\vert\)</span>are also <span class="math inline">\(\mathbb{B}\)</span>-measurable.</p>
+<blockquote class="blockquote">
+<p>if function <span class="math inline">\(X( s )\)</span> and <span class="math inline">\(Y( s )\)</span> are measurable mappings from <span class="math inline">\(S\)</span> to <span class="math inline">\(\Omega\)</span>, then the ordinary algebraic operations on <span class="math inline">\(X( s )\)</span> and <span class="math inline">\(Y( s )\)</span> will produce new measurable mappings. - <span class="math inline">\(aX( s )\)</span> - <span class="math inline">\(X( s ) + Y( s )\)</span> - <span class="math inline">\(X( s )Y( s )\)</span> and <span class="math inline">\(\frac{X( s )}{ Y( s )}\)</span></p>
+</blockquote>
+<p>⁉️️ The induced probability function <span class="math inline">\(P_{x}( \cdot )\)</span> satisfies the three axioms of the probability function?</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Condition ( 1 ) <span class="math display">\[
+1 \ge P_{X}(x_i) = P(X = x_i) = P(C_i) \ge 0
+\]</span></li>
+</ul>
+<p>given <span class="math inline">\(0 \le P( C_{A} ) \le 1\)</span> for any <span class="math inline">\(C_{A} \in \mathbb{B}\)</span>, where <span class="math inline">\(\mathbb{B}\)</span> is a <span class="math inline">\(\sigma\)</span>-field associated with <span class="math inline">\(S\)</span>.</p>
+<ul>
+<li><p>Condition ( 2 ) <span class="math display">\[
+P_{X}( \Omega ) = P( S ) = 1
+\]</span></p></li>
+<li><p>Condition ( 3 )</p></li>
+</ul>
+<p>consider two mutually exclusive events <span class="math inline">\(A_1\)</span> and <span class="math inline">\(A_2\)</span> in <span class="math inline">\(\mathbb{B}_{\Omega}\)</span>, a <span class="math inline">\(\sigma\)</span>-field generated from <span class="math inline">\(\Omega\)</span>. Here, the induced probability of <span class="math inline">\(A_1 \cap A_2\)</span> is given by <span class="math display">\[
+P_{X}( A_1 \cap  A_2 ) = P( C )
+\]</span></p>
+<p>where <span class="math inline">\(C = \{ s\in S: X( s ) \in A_1 \cap A_2 \}\)</span></p>
+<p>However, we can also write <span class="math display">\[
+C = \{ s \in S : X( s ) \in A_1 \} \cap \{ s \in S : X( s ) \in A_2 \} \\
+= C_1 \cap C_2
+\]</span></p>
+<p>The fact that <span class="math inline">\(A_1\)</span> and <span class="math inline">\(A_2\)</span> are disjoint implies that <span class="math inline">\(C_1\)</span> and <span class="math inline">\(C_2\)</span> are also disjoint. It follows that</p>
+<p><span class="math display">\[
+P_{x}( A_1 \cap A_2  ) = P( C_1 ) + P( C_2 ) \\
+= P_{x}( A_1 ) + P_{X}( A_2 )
+\]</span></p>
+</div>
+</div>
+<p>In the rest, we will abuse the notations for the original probability function <span class="math inline">\(P( \cdot )\)</span> and the induced probability function <span class="math inline">\(P_{X}( \cdot )\)</span>; we will denote both probability functions as <span class="math inline">\(P( \cdot )\)</span></p>
+<p>🌰: Suppose we throw three coins. Then the sample space <span class="math display">\[
+S = \{ HHH,HTH,HHT,THH,THT,TTH,HTT,TTT \}
+\]</span></p>
+<p>Define a random variable <span class="math inline">\(X( \cdot )\)</span> to be the number of the heads obtained from the experiment. Then the new sample space, or the range of <span class="math inline">\(X\)</span>, is given by</p>
+<p><span class="math display">\[
+\Omega = \{ 0,1,2,3 \}
+\]</span></p>
+<p>Now, suppose we are interested in calculating the probability that <span class="math inline">\(P( 0 \le X \le 1 )\)</span>.Denote</p>
+<p><span class="math display">\[
+C = \{ s \in S: 0 \le X( s ) \le 1\}\\
+= \{ TTT,TTH,THT,HTT\}
+\]</span></p>
+<p>It follows that: <span class="math display">\[
+P(0 \le X \le 1 ) = P( C )\\
+= \frac{1}{2 }
+\]</span></p>
+</section>
+</section>
+<section id="cumulative-distribution-function" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="cumulative-distribution-function"><span class="header-section-number">3.2</span> Cumulative Distribution Function</h2>
+<p>✅ How to characterize a random variable <span class="math inline">\(X\)</span>?</p>
+<p><strong>💬 Definition 3.3 cumulative Distribution Function (CDF)</strong> The cumulative distribution function (CDF) of a random variable <span class="math inline">\(X\)</span> is defined as <span class="math display">\[
+F_{X}(x) = P( X \le x ) \text{ for all } x \in \mathbb{R}
+\]</span></p>
+<p><strong>⚖️Theorem 3.2 Properties of <span class="math inline">\(F_{X}( \cdot )\)</span></strong> Suppose <span class="math inline">\(F_{X}( \cdot )\)</span> is the CDF of some random variable <span class="math inline">\(X\)</span>.</p>
+<ul>
+<li><span class="math inline">\(\lim_{x \to -\infty}F_{X}( x ) = 0,\lim_{x \to +\infty}F_{X}( x )=1\)</span>.</li>
+<li><span class="math inline">\(F_{X}( x )\)</span> is non-decreasing</li>
+<li><span class="math inline">\(F_{X}( x )\)</span> is right-continuous, i.e., for all <span class="math inline">\(x\)</span> and <span class="math inline">\(\delta&gt;0\)</span> ,</li>
+</ul>
+<p><span class="math display">\[
+\lim_{\delta \to 0^{+}}[F_{X}(x+\delta-F_{X}( x )] = 0
+\]</span></p>
+<p><strong>⚖️ Theorem 3.3</strong> Let <span class="math inline">\(a&lt;b\)</span>.Then <span class="math display">\[
+P(a&lt;X \le b) = F_{X}( b ) - F_{X}( a )
+\]</span></p>
+<p><strong>⚖️ Theorem 3.4</strong> <span class="math inline">\(P( X &gt; b ) = 1 - F_{X}( b )\)</span></p>
+<p>🌰: Suppose <span class="math inline">\(F_1( x )\)</span> and <span class="math inline">\(F_2(x)\)</span> are two CDF’s. Is the linear combination <span class="math inline">\(F( x ) = pF_1( x ) +(1-p)F_2(x)\)</span> a CDF?Here p is a constant</p>
+<p>IIF the <span class="math inline">\(0 \le p\le 1\)</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Mixture of two distributions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>A mixture of two distributions can provide a great deal of flexibility such as capturing skewness and heavy tails.</li>
+<li>One possibility for a mixed distribution to arise is that in an observed data, some observations are generated from one distribution, and the remaining observations are generated from another distribution.</li>
+<li>Another possibility for a mixed distribution is that there exist two mutually exclusive states,state 1 and state 2 which arise with probabilities p and 1 -p respectively.The random variable <span class="math inline">\(X\)</span> will follow the distribution <span class="math inline">\(F(x)\)</span> when state 1 occurs and will follow distribution <span class="math inline">\(F_2(x)\)</span> when state 2 occurs.Then the distribution <span class="math inline">\(F(x)\)</span>of <span class="math inline">\(X\)</span> is a mixture of distributions <span class="math inline">\(F_1(x)\)</span>and <span class="math inline">\(F_2(x)\)</span>.</li>
+<li>A well-known example in econometrics is the so-called Markov regime-switching model, which is widely used in macroeconomics and finance, in which <span class="math inline">\(p\)</span> depands on a state variable characterizing the business cycles</li>
+</ul>
+<blockquote class="blockquote">
+<p>In practice, <span class="math inline">\(p\)</span> may depend on some economic variables <span class="math inline">\(Z\)</span>. An example of <span class="math inline">\(p = p( Z )\)</span> is<br>
+<span class="math display">\[
+p( Z ) = \frac{1}{1 + \exp( - \alpha^{'} Z )}
+\]</span></p>
+</blockquote>
+</div>
+</div>
+<p><strong>💬 Definition 3.4 Identical Distributions</strong> Two random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are identically distributed if for every set <span class="math inline">\(A\)</span> in <span class="math inline">\(\mathbb{B}_{\Omega}\)</span>, where <span class="math inline">\(\mathbb{B}_{\Omega}\)</span> is the smallest <span class="math inline">\(\sigma\)</span>-field containing all the the intervals of real numbers of the form <span class="math inline">\(( a,b ),[a,b),(a,b],\)</span> and <span class="math inline">\([a,b]\)</span>, one has <span class="math display">\[
+P( X \in A ) = P( Y \in A )
+\]</span></p>
+<ul>
+<li>it is important to note that the identically distribution does not imply <span class="math inline">\(X = Y\)</span>, although <span class="math inline">\(X = Y\)</span> implies that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> have the same distribution</li>
+<li>it is not necessary that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are defined on the same sampele space. Only their distributions functions have to coincide.</li>
+</ul>
+<p><strong>⚖️ Theorem 3.5</strong> Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables defined on the same sample space <span class="math inline">\(S\)</span>.Then <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are identically distributed if and only if their CDF’s are identical, i.e., <span class="math inline">\(F_{X}( x ) = F_{Y}( x )\)</span> for all <span class="math inline">\(x \in \mathbb{R}\)</span></p>
+<p>🌰:the Income distribution, Lorenz Curve and Gini Coefficient</p>
+<p>In economics, the Lorenz curve and Gini coefficient are two popular measures of income income inequality.</p>
+<p><span class="math display">\[
+\text{Gini coefficient} = \frac{A}{A+B}
+\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/237696/1/6774/16003/65732a55F1af7c3da/a83a50b88169c168.jpg" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption class="figure-caption">Lorenz Curve.png</figcaption>
+</figure>
+</div>
+<p>It graphically shows that for the bottom <span class="math inline">\(x%\)</span> of households, what percentage <span class="math inline">\(y%\)</span> of the total income they share. Every point on the Lorenz curve represents a statement like “the bottom <span class="math inline">\(20%\)</span> of all households have <span class="math inline">\(10%\)</span> of the total income”</p>
+<p>A perfectly equal income distribution would be one in which every household has the same income. In this case, the bottom <span class="math inline">\(x%\)</span> of society would always have <span class="math inline">\(x%\)</span> of the income for all <span class="math inline">\(x \in [0,100]\)</span>. This can be depicted by the 45-degree straight line <span class="math inline">\(y=x\)</span>, called the “line of the perfect equality”</p>
+<blockquote class="blockquote">
+<p>In economics, the Gini coefficient is the most commonly used measurement of inequality. It was developed by the Italian statistician and sociologist Corrado Gini in 1912. The Gini coefficient is defined based on the Lorenz Curve.The Gini coeffcient can then be thought of as the ratio of the area that lies between the line of equality and the Lorenz curve over the total area under the line of equality If all people have non-negative income ( or wealth ), the Gini coefficient can theoretically range from 0( complete equality ) to 1( complete inequality ); it is sometimes expressed as a percentage ranging between 0 and 100 If negative values are possible ( such as the negative wealth of people with debts ), then the Gini coefficient could theoretically be more than 1. Noting that two countries with different income distributions can have the same Gini coefficient</p>
+</blockquote>
+<p>🌰: First Order Stochastic dominance</p>
+<p>If two distribution <span class="math inline">\(F( \cdot )\)</span> and <span class="math inline">\(G( \cdot )\)</span> satisfy <span class="math inline">\(F( x ) \le G( x )\)</span> for all <span class="math inline">\(x\)</span> on the real line, with strict inequality at least for some <span class="math inline">\(x\)</span>, then we say that the distribution <span class="math inline">\(F( \cdot )\)</span> has first order stochastic dominance over dsitribution <span class="math inline">\(G( \cdot )\)</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://img14.360buyimg.com/ddimg/jfs/t1/237207/11/6550/9586/6573d43bF940d7718/df74dae4a24a35f7.jpg" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption class="figure-caption">First-order Stochastic dominance.png</figcaption>
+</figure>
+</div>
+<blockquote class="blockquote">
+<p>the first order stochastic dominance is widely used in decision analysis, welfare economics, and finance An application of stochastic dominance is to the analysis of income distributions. If <span class="math inline">\(x\)</span> denotes an income level, then the inequality means that the proportion of individuals in distribuion <span class="math inline">\(F( \cdot )\)</span> with the income less than <span class="math inline">\(x\)</span> is smaller than the proportion of such individuals in <span class="math inline">\(G( \cdot )\)</span>. In other words, there is a higher proportion of poorer people in <span class="math inline">\(G( \cdot )\)</span> than in <span class="math inline">\(F( \cdot )\)</span> Another application:if portfolio <span class="math inline">\(F( \cdot )\)</span>has first order stochastic dominate over portfolio <span class="math inline">\(G( \cdot )\)</span>,then <span class="math inline">\(P_{F}( X &gt; x ) \ge P_{G}( X &gt; x )\)</span> for all <span class="math inline">\(x\)</span>;that is,the probability that high returns of portfolio <span class="math inline">\(F( \cdot )\)</span> is higher than the probability that high returns of portfolio <span class="math inline">\(G( \cdot )\)</span>.</p>
+</blockquote>
+<p>🌰: Second order stochastic Dominance A probability distribution <span class="math inline">\(F( \cdot )\)</span> stochastically domiance another probability distribution <span class="math inline">\(G( \cdot )\)</span> to second order if, for all <span class="math inline">\(x \in ( -\infty,+\infty )\)</span>, <span class="math display">\[
+\int_{-\infty}^{x}F( y )dy \le \int_{-\infty}^{x}G( y )dy,
+\]</span></p>
+<p>with strict inequality for at least some <span class="math inline">\(x\)</span>. This defination requires the dominant distribution <span class="math inline">\(F( \cdot )\)</span> to have a smaller area beneath the distribution function for all <span class="math inline">\(x\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/230010/11/6983/12281/6573d9f7Ff4cd40cb/63960355d61d5e4e.jpg" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption class="figure-caption">Second-order stochastic dominance.png</figcaption>
+</figure>
+</div>
+<blockquote class="blockquote">
+<p>Risk-averse economic agents will always prefer distribution <span class="math inline">\(F( \cdot )\)</span> because for any increasing and <strong>concave utility function</strong> <span class="math inline">\(u( \cdot )\)</span>, we have <span class="math display">\[
+\int_{-\infty}^{\infty}u( x )dF(x) \ge \int_{-\infty}^{\infty} u( x )dG( x )
+\]</span></p>
+</blockquote>
+<p>if and only if <span class="math inline">\(F( \cdot )\)</span> has second order stochatic dominance over <span class="math inline">\(G( \cdot )\)</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Intuitively,economic agents whom prefer more will prefer a first order stochastic dominating distribution,and economic agents who prefer more but are risk-adverse will prefer a second order stochastic dominating distribution.</p>
+<p>Higher order stochastic dominance can be defined in a similar way.</p>
+<p>The concepts of various stochastic dominances are very useful in characterizing risk behavior of economic agents.There exists a dual relationship between stochastic dominances and classes of utility functions.</p>
+<p>Probability theory is a rather useful analytic tool in behavior economics and behavior finance.</p>
+</div>
+</div>
+</section>
+<section id="discrete-random-variablesdrv" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="discrete-random-variablesdrv"><span class="header-section-number">3.3</span> Discrete Random Variables(DRV)</h2>
+<p><strong>💬 Definition 3.5 Discrete Random Variable(DRV)</strong> If a random variable <span class="math inline">\(X\)</span> can only take a countable number of values, then <span class="math inline">\(X\)</span> is called a discrete random variable <span class="math inline">\(DRV\)</span>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For a discrete random variable <span class="math inline">\(X\)</span>, the associate sample space <span class="math inline">\(\Omega\)</span> must countain only a countable number for real number. For example, <span class="math inline">\(\Omega = \{ 1,,2,3,4,5,6 \}\)</span> or <span class="math inline">\(\Omega = \{ 0,1,2, \ldots \}\)</span></p>
+</div>
+</div>
+<p><strong>💬 Definition 3.6 Probability Mass Function(PMF)</strong> The PMF of a DRV is defined as <span class="math display">\[
+f_{X}( x ) = P( X = x ) \\text{for all x } \in \mathbb{R}
+\]</span></p>
+<p><strong>⚖️ Theorem 3.6 Properties of PMF</strong> - <span class="math inline">\(0\le f_{X}( x ) \le 1\)</span> for all <span class="math inline">\(x \in \mathbb{R}\)</span> - <span class="math inline">\(\sum_{x \in \Omega}f_{X}( x ) = 1\)</span></p>
+<p><strong>💬 Definition 3.7 Support</strong>The collection of the points on the real line <span class="math inline">\(\mathbb{R}\)</span> at which a DRV <span class="math inline">\(X\)</span> has a positive probability is called the support of <span class="math inline">\(X\)</span>,denoted as <span class="math display">\[
+Support( X ) = \{ x \in \mathbb{R}:f_{X}( x ) &gt; 0 \}
+\]</span> Therefore,we have <span class="math display">\[
+Support( X ) = \Omega
+\]</span></p>
+<p>We pay attention to the point with the PMF greater than zero.</p>
+<blockquote class="blockquote">
+<p>The support of <span class="math inline">\(X\)</span> is the set of all possible values that <span class="math inline">\(X\)</span> can take with strictly positive probability. Although <span class="math inline">\(f_{X}( x )\)</span>is defined on the entire real line <span class="math inline">\(\mathbb{R}\)</span>,it suffices to know the support of a DRV <span class="math inline">\(X\)</span> and the probabilities of all points in the support. The PMF fx(x)can be represented graphically via a so-called probability historgram.</p>
+</blockquote>
+<p><strong>💬 Definition Probability Histogram</strong> A probability histogram is a plot to represent a discrete probability distribution where rectangles are constructed so that their bases of equal width are centered at each value <span class="math inline">\(x\)</span> and their heights are equal to the corresponding probabilities given by the PMF.The bases are constructed so as to have no space between the rectangles.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/226487/24/6082/10315/6573f47aFba41af59/1f124d39be90b961.jpg" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption class="figure-caption">probability Histogram.png</figcaption>
+</figure>
+</div>
+<p><strong>⚖️ Theorem 3.7</strong> Suppose <span class="math inline">\(f_{X}( x )\)</span> is the PMF of the DRV <span class="math inline">\(X\)</span>. Then CDF of a DRV <span class="math inline">\(X\)</span> <span class="math display">\[
+F_{X}( x ) = p( X \le x ) = \sum_{y \le x}f_{X}( y ) \text{ for any x } \in \mathbb{R}
+\]</span></p>
+<p>where the summation is over all values <span class="math inline">\(y\)</span> in <span class="math inline">\(\Omega\)</span>that are less than or equal to <span class="math inline">\(x\)</span>.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><span class="math inline">\(F_{X}( x )\)</span> is defined not only in over the Support of <span class="math inline">\(X\)</span>, but on the whole real line.</li>
+</ul>
+</div>
+</div>
+<p>🌰: Suppose a random variable <span class="math inline">\(X\)</span> has the following PMF, <span class="math display">\[
+f_{X}( x ) =
+\begin{cases} \frac{1}{N },&amp; x =1,2, \ldots N  \\ 0, &amp;  \text{otherwise}\end{cases}
+\]</span> Find its CDF <span class="math inline">\(F_{X}( x )\)</span></p>
+<p>👉🏻: To compute the CDF <span class="math inline">\(F_{X}( x )\)</span>,where <span class="math inline">\(x\)</span> ranges from <span class="math inline">\(-\infty \text{to } +\infty\)</span>, we divide the real line <span class="math inline">\(\mathbb{R}\)</span> into <span class="math inline">\(N + 1\)</span> intervals:</p>
+<p>case 1 : <span class="math inline">\(x &lt;1\)</span>. Then the event <span class="math inline">\(\{ X \le x \}\)</span> is an empty set <span class="math inline">\(\emptyset\)</span> and <span class="math display">\[
+F_{X}( x ) = \sum_{x_i \le x}f_{X}( x_i ) = 0
+\]</span></p>
+<p>case 2 : <span class="math inline">\(1 \le x &lt; 2\)</span>. Then the event <span class="math inline">\(\{ X \le x \} = \{ 1 \}\)</span>, and so <span class="math display">\[
+F_{X}( x ) = \sum_{x_i \le x}f_{X}( x_i ) = f_{X}( 1 ) = \frac{1}{N }
+\]</span></p>
+<p>case j :<span class="math inline">\(j-1 \le x &lt; j, 2 \le j\le N\)</span>. Then the event <span class="math inline">\(\{ X \le x\} = \{ 1, \ldots ,j-1 \}\)</span>, and <span class="math display">\[
+F_{X}( x ) = \frac{j-1}{N }
+\]</span></p>
+<p>case N+1 :<span class="math inline">\(x\ge N\)</span> Then the event <span class="math inline">\(\{ X\le x \} = \{ 1, \ldots ,N \}\)</span>, and so <span class="math display">\[
+F_{X}( x ) = 1
+\]</span></p>
+<p>To sumup, we have</p>
+<p><span class="math display">\[
+F_{X}( x ) =
+\begin{cases} 0, &amp; x&lt;1 \\ \frac{j}{N }, &amp;  j \le x &lt; j+1, 1 \le j &lt; N \\ 1, &amp; x \ge N \end{cases}
+\]</span></p>
+<blockquote class="blockquote">
+<p>This function is a step function, where jumps occur ar the points with strictly positive probabilities that is , when jumps occur at the points contained in the support of <span class="math inline">\(X\)</span></p>
+</blockquote>
+<p><strong>⚖️ Theorem 3.8 </strong> Suppose <span class="math inline">\(X\)</span> is a DRV with CDP <span class="math inline">\(F_{X}( x )\)</span>, and its support contains a squence of points <span class="math inline">\(\{ x_1 &lt;x_2&lt;\cdots \}\)</span> Then its PMF <span class="math display">\[
+f_{X}( x_i ) = \begin{cases} F_{X}( x_i ), &amp;  i=1\\ F_{X}( x ) - F_{X}( x_{i-1} ), &amp; i&lt;1  \end{cases}
+\]</span></p>
+</section>
+<section id="continuous-random-variables" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="continuous-random-variables"><span class="header-section-number">3.4</span> Continuous Random Variables</h2>
+<p><strong>💬 Definition 3.9 Continuous Random Variable</strong> A random variable <span class="math inline">\(X\)</span> is called contiuous if its distribuiton function <span class="math inline">\(F_{X}( x )\)</span> is continuous for all <span class="math inline">\(x\)</span> in the real line. In contrast, a random variable <span class="math inline">\(X\)</span> is discrete if <span class="math inline">\(F_{X}( x )\)</span> is a step funciton of <span class="math inline">\(x\)</span></p>
+<p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/229039/11/6901/12432/6573f75cFe9ff2e00/68ab87742717bfea.jpg" class="img-fluid" alt="Random Variable.png">{width = “50%” fig-align = “center”}</p>
+<p>✅ can we define a PMF <span class="math inline">\(f_{X}( x )\)</span> for a CRV <span class="math inline">\(X\)</span></p>
+<p>For any constant $&gt; 0 $, <span class="math inline">\(\{ X =x \} \subset \{ x-\frac{\epsilon}{2 }&lt; X \le x + \frac{\epsilon}{2 } \}\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+0 &amp;\le P(X = x) \\
+&amp;\le P(x-\frac{\epsilon}{2 }&lt; X \le x + \frac{\epsilon}{2 }) \\
+&amp;= F_{x}( x+ \frac{\epsilon}{2 } ) - F_{X}( x - \frac{\epsilon}{2 } ) \\
+&amp;\to 0 \text{ as } \epsilon \to 0 \\
+\end{aligned}
+\]</span> by continuity of <span class="math inline">\(F_{X}( \cdot )\)</span> Thus <span class="math display">\[
+P( X=x ) = 0 \text{for all} x
+\]</span></p>
+<ul>
+<li>for a CRV <span class="math inline">\(X\)</span>, the probability that <span class="math inline">\(X\)</span> takes <strong>a single point is zero</strong></li>
+<li>Intuition: consider an analogous example of a satellite flying over Mainland China.Suppose it takes one hour for the satellite to fly over Mainland,2 minutes to fly over Fujian,and 0.1 second to fly over Xiamen.It is conceivable that it takes almost zero second for the satellite to fly over Economic Building at XMU.</li>
+<li>The result that <span class="math inline">\(P(X=x)=0\)</span> for all <span class="math inline">\(x\)</span> for a CRV <span class="math inline">\(X\)</span> has important implications.For example, <span class="math display">\[
+P( a &lt; X \le b) =P( a \le X&lt; b ) \\
+= P(a \le X \le B)
+\]</span></li>
+</ul>
+<p><strong>💬 Definition Absolute Continuity(AC)</strong> A function <span class="math inline">\(F: \mathbb{R} \to \mathbb{R}\)</span> is called absolutely continuous with respect to the Lebesgue measure if <span class="math inline">\(F( x )\)</span> is continuous on <span class="math inline">\(\mathbb{R}\)</span> and is differentiable almost everywhere</p>
+<blockquote class="blockquote">
+<p>What is meant by “almost everywhere” Intuitively,in any finite interval of <span class="math inline">\(\mathbb{R}\)</span>,there are a finite number of points or an infinite but countable number of points where <span class="math inline">\(F_{X}( x )\)</span>is not differentiable. A continuously differentiable function is absolutely continuous.</p>
+</blockquote>
+<p><strong>💬 Definition 3.10 Probability Density Function(PDF)</strong> Let <span class="math inline">\(X\)</span> be a CRV with absolutely continuous CDF <span class="math inline">\(F_{X}( x )\)</span>. If there exists a function <span class="math inline">\(f_{X}( x )\)</span> such that</p>
+<p><span class="math display">\[
+F_{X}( x ) = \int_{-\infty}^{x}f_{X}( y )dy \text{ for all } x \in \mathbb{R}
+\]</span></p>
+<p>The function <span class="math inline">\(f_{X}( x ) :\mathbb{R} \to \mathbb{R}\)</span> is called a probability density function (PDF) of <span class="math inline">\(X\)</span>.</p>
+<p>In other words, we have</p>
+<p><span class="math display">\[
+F^{'}_{X}( x ) = f_{X}( x ) \text{ for almost all } x \in \mathbb{R}
+\]</span></p>
+<p>For interpretation of the PDF <span class="math inline">\(f_{X}( x )\)</span>, we have,for any small constant <span class="math inline">\(\epsilon &gt; 0\)</span>, <span class="math display">\[
+\begin{aligned}
+&amp;P( x-\frac{\epsilon}{2 }&lt;X \le x + \frac{\epsilon}{2 } ) \\
+=&amp; F_{X}( x + \frac{\epsilon}{2 } ) - F_{X}( x - \frac{\epsilon}{2 } ) \\
+=&amp; \int_{x-\frac{\epsilon}{2 }}^{x+\frac{\epsilon}{2 }}f_{X}( y )dy \\
+=&amp; f_{X}( \bar{x}  ) \epsilon
+\end{aligned}
+\]</span></p>
+<p>for some <span class="math inline">\(\bar{x } \in (x-\frac{\epsilon}{2 }, x + \frac{\epsilon}{2 }]\)</span></p>
+<ul>
+<li><p>Although <span class="math inline">\(f_{X}( x )\)</span>is not a <strong>probability measure</strong>(i.e., the probability mass function for DRV),it is proportional to the probability that x takes values in a small interval centered at point <span class="math inline">\(x\)</span> .Thus,<span class="math inline">\(f_{X}( x )\)</span>characterizes the <strong>relative magnitude</strong> of the probability that <span class="math inline">\(X\)</span> takes values in a small interval centered at <span class="math inline">\(x\)</span>.</p></li>
+<li><p>The plot of <span class="math inline">\(f_{X}( x )\)</span>describes the shape of the probability distribution of a CRV <span class="math inline">\(X\)</span>.</p></li>
+</ul>
+<p>⁉️️ Is <span class="math inline">\(f_{X}( x )\)</span> a unique function for a given <span class="math inline">\(F_{X}( x )\)</span></p>
+<ul>
+<li>Given a CDF <span class="math inline">\(F_{X}( x )\)</span>, we can obtain the PDF function <span class="math inline">\(f_{X}( x ) = F_{X}^{'}( x )\)</span> at the points where <span class="math inline">\(F_{X}( x )\)</span> is differentiable. When <span class="math inline">\(F_{X}( x )\)</span> differentiable on the entire real line, the PDF <span class="math inline">\(f_{X}( x )\)</span> is unique.</li>
+<li>However, when <span class="math inline">\(F_{X}( x )\)</span> is not differentiable at some points, <span class="math inline">\(f_{X}( X )\)</span> is not defined at those points.</li>
+</ul>
+<p>✅ So how to define the values of PDF <span class="math inline">\(f_{X}( x )\)</span> at the points where <span class="math inline">\(F^{'}( x )\)</span> does not exit</p>
+<ul>
+<li>we can define <span class="math inline">\(f_{X}( x )\)</span> arbitrarily at those points, but smooth as possible for compute convenience.</li>
+<li>Example: consider two PDFs</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+f_{X}( x ) = \begin{cases} e^{-x}, &amp; for 0 &lt;x &lt; \infty \\0 , &amp;  elsewhere\end{cases} \\
+\text{and}\\
+f_{X}( x ) = \begin{cases} e^{-x}, &amp; for 0 \le x &lt;\infty  \\ 0, &amp; f \end{cases}
+\end{aligned}
+\]</span></p>
+<p><strong>⚖️ Theorem 3.9 Properties of PDF</strong> A function <span class="math inline">\(f_{X}( x )\)</span> is a PDF of a CRV <span class="math inline">\(X\)</span> <strong>if and only if</strong> it satisfies the following properties:</p>
+<ul>
+<li><span class="math inline">\(f_{X}( x ) \ge 0\)</span> for all <span class="math inline">\(x \in \mathbb{R}\)</span></li>
+<li><span class="math inline">\(\int_{-\infty}^{\infty}f_{X}( x )dx = 1\)</span></li>
+</ul>
+<p><strong>⚖️ Theorem 3.12 Support of a CRV</strong> The support of a CRV <span class="math inline">\(X\)</span> is the set of all points <span class="math inline">\(x\)</span> in <span class="math inline">\(\mathbb{R}\)</span> such that <span class="math inline">\(f_{X}( x ) &gt; 0\)</span>. That is, <span class="math display">\[
+support( X ) = \{ x \in \mathbb{R}:f_{X}( x ) &gt; 0 \}
+\]</span> where <span class="math inline">\(f_{X}( x )\)</span> is the PDF of <span class="math inline">\(X\)</span>, but it is important that the <span class="math inline">\(P(X = x) , x \in Support(x)\)</span>.</p>
+<ul>
+<li>The support of a CRV <span class="math inline">\(X\)</span> is the set of all possible points on <span class="math inline">\(\mathbb{R}\)</span> with strictly positive PDF <span class="math inline">\(f_{X}( X )\)</span>.</li>
+<li>The probability that a CRV <span class="math inline">\(X\)</span> takes values in a small neighborhood of any point in its support is always positive.</li>
+<li>In contrast,the probability that X takes values in some small neighborhood of any point outside the support will be zero.</li>
+<li>It suffices to focus on the support of <span class="math inline">\(X\)</span> when calculating the probabilities of a CRV.</li>
+</ul>
+<p>🌰: Location_Scale Family Let <span class="math inline">\(f( x )\)</span> be a PDF, and let <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma&gt;0\)</span> be any given constants.Then the funciton</p>
+<p><span class="math display">\[
+g( x ) = \frac{1}{\sigma}f( \frac{x-\mu}{\sigma} )
+\]</span></p>
+<p>is a PDF</p>
+<blockquote class="blockquote">
+<p>The family of f(x-u),indexed by parameter u,is called the location family with standard PDF f(x),where pa- rameter u is called the location parameter. The family of if（）,indexed by parameter o,is called the scale family with standard PDF f(x),where param- eter o is called the scale parameter. The family of If（）,indexed by parameters (u,o), is called the location-scale family with standard PDF ,where u and o are called the location and scale parameters respectively.</p>
+</blockquote>
+</section>
+<section id="functions-of-a-random-variable" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="functions-of-a-random-variable"><span class="header-section-number">3.5</span> Functions of a Random Variable</h2>
+</section>
+<section id="mathematical-expectation" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="mathematical-expectation"><span class="header-section-number">3.6</span> Mathematical Expectation</h2>
+</section>
+<section id="moments" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="moments"><span class="header-section-number">3.7</span> Moments</h2>
+</section>
+<section id="quantiles" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="quantiles"><span class="header-section-number">3.8</span> Quantiles</h2>
+</section>
+<section id="moment-generating-function-mgf" class="level2" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="moment-generating-function-mgf"><span class="header-section-number">3.9</span> Moment Generating Function (MGF)</h2>
+</section>
+<section id="characteristic-function" class="level2" data-number="3.10">
+<h2 data-number="3.10" class="anchored" data-anchor-id="characteristic-function"><span class="header-section-number">3.10</span> Characteristic Function</h2>
+</section>
+<section id="conclusion" class="level2" data-number="3.11">
+<h2 data-number="3.11" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">3.11</span> Conclusion</h2>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Foundation of Probability Theory.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Foundation of Probability Theory</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./summary.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

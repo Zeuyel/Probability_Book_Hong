@@ -13,6 +13,7 @@ book:
     - index.qmd
     - intro.qmd
     - Foundation of Probability Theory.md
+    - Random Variables and Univariate Probability Distributions.md
     - summary.qmd
     - references.qmd
 
